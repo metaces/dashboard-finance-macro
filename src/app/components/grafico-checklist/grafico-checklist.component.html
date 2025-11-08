@@ -1,13 +1,19 @@
-<div style="padding: 20px; text-align: center;">
+<div class="checklist-container">
   <h3>Gráfico de Checklist</h3>
-  <p>Atualizado via WebSocket (Full + Incrementos)</p>
 
-  <button (click)="iniciarChecklist()" [disabled]="loading" style="margin-bottom: 15px;">
-    {{ loading ? 'Carregando...' : 'Iniciar Checklist' }}
-  </button>
+  <div class="inputs">
+    <!-- Selecionar Data -->
+    <p-calendar [(ngModel)]="diaSelecionado" dateFormat="yy-mm-dd" placeholder="Selecione o dia"></p-calendar>
 
-  <!-- Spinner -->
-  <div *ngIf="loading" class="spinner"></div>
+    <!-- Selecionar Hora Inicial -->
+    <p-calendar [(ngModel)]="horaInicialSelecionada" timeOnly="true" hourFormat="24" placeholder="Hora inicial"></p-calendar>
+
+    <button pButton type="button" label="Iniciar Checklist" (click)="iniciarChecklist()" [disabled]="loading"></button>
+
+  </div>
+
+
+  <div *ngIf="loading">Carregando...</div>
 
   <div style="height: 400px;" *ngIf="!loading">
     <canvas baseChart
