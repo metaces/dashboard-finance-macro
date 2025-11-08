@@ -1,0 +1,9 @@
+<nav class="tabs">
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Checklist</a>
+  <a routerLink="/ativos" routerLinkActive="active">Ativos</a>
+  <a routerLink="/estrangeiro" routerLinkActive="active">Estrangeiro</a>
+</nav>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

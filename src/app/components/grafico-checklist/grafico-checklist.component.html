@@ -1,0 +1,19 @@
+<div style="padding: 20px; text-align: center;">
+  <h3>Gráfico de Checklist</h3>
+  <p>Atualizado via WebSocket (Full + Incrementos)</p>
+
+  <button (click)="iniciarChecklist()" [disabled]="loading" style="margin-bottom: 15px;">
+    {{ loading ? 'Carregando...' : 'Iniciar Checklist' }}
+  </button>
+
+  <!-- Spinner -->
+  <div *ngIf="loading" class="spinner"></div>
+
+  <div style="height: 400px;" *ngIf="!loading">
+    <canvas baseChart
+      [data]="chartData"
+      [options]="chartOptions"
+      [type]="'line'">
+    </canvas>
+  </div>
+</div>

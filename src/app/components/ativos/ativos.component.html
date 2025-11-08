@@ -1,0 +1,12 @@
+<div>
+  <h3>Resumo</h3>
+  <p>Alta: {{ alta }} | Queda: {{ queda }} | Neutro: {{ neutro }}</p>
+  <table>
+    <tr><th>Nome</th><th>Preço</th><th>Sinal</th></tr>
+    <tr *ngFor="let ativo of ativos; let i = index">
+      <td>{{ ativo.nome }}</td>
+      <td>{{ ativo.preco }}</td>
+      <td *ngIf="i > 0">{{ sinais[i - 1] }}</td>
+    </tr>
+  </table>
+</div>

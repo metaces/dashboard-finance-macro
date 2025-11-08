@@ -1,0 +1,63 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #1e1e1e; /* fundo escuro */
+  color: #ffffff; /* texto branco */
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ffffff; /* título branco */
+}
+
+button {
+  background-color: #42A5F5;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background-color: #90CAF9;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #1E88E5;
+}
+
+div {
+  width: 100%;
+  max-width: 800px;
+}
+
+canvas {
+  background: #2c2c2c; /* fundo do gráfico escuro */
+  border: 1px solid #444; /* borda mais escura */
+  border-radius: 8px;
+  padding: 8px;
+}
+
+/* Spinner */
+.spinner {
+  border: 6px solid #444; /* borda escura */
+  border-top: 6px solid #42A5F5;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
