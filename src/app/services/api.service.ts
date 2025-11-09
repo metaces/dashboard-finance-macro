@@ -15,4 +15,14 @@ export class ApiService {
   getMinFerr(): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/minfer`);
   }
+
+
+ getMapaAtivos(dia: string, horaInicial?: string): Observable<any[]> {
+    let url = `${this.baseUrl}/ativos/mapa?dia=${dia}`;
+    if (horaInicial) {
+      url += `&horaInicial=${horaInicial}`;
+    }
+    return this.http.get<any[]>(url);
+  }
+
 }
