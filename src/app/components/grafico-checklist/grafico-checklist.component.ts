@@ -28,7 +28,8 @@ export class GraficoChecklistComponent {
     datasets: [
       { data: [], label: 'Alta', borderColor: '#66BB6A', fill: false, pointRadius: 0 },
       { data: [], label: 'Queda', borderColor: '#FF0000', fill: false, pointRadius: 0 },
-      { data: [], label: 'Rastro Acumulado', borderColor: '#42A5F5', fill: false, borderDash: [5, 5], pointRadius: 0 }
+      { data: [], label: 'Rastro Acumulado', borderColor: '#42A5F5', fill: false, borderDash: [5, 5], pointRadius: 0 },
+      { data: [], label: 'Neutro', borderColor: '#B0B0B0', fill: false, borderDash: [5, 5], pointRadius: 0 }
     ]
   };
 
@@ -85,6 +86,7 @@ export class GraficoChecklistComponent {
     (this.chartData.datasets[0].data as number[]).push(parseFloat(bloco.alta));
     (this.chartData.datasets[1].data as number[]).push(parseFloat(bloco.queda));
     (this.chartData.datasets[2].data as number[]).push(parseFloat(bloco.rastro_acumulado));
+    (this.chartData.datasets[3].data as number[]).push(parseFloat(bloco.neutro));
   }
 
   private formatDate(date: Date): string {
