@@ -20,8 +20,8 @@ export class GraficoChecklistComponent {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
 
   loading = false;
-  diaSelecionado: Date | null = null;
-  horaInicialSelecionada: Date | null = null;
+  diaSelecionado: Date = new Date();
+  horaInicialSelecionada: Date = new Date();
 
   chartData: ChartConfiguration<'line'>['data'] = {
     labels: [],
