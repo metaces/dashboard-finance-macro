@@ -82,7 +82,9 @@ export class GraficoChecklistComponent {
   }
 
   private addBloco(bloco: any): void {
-    this.chartData.labels?.push(new Date(bloco.fim).toLocaleTimeString());
+    const originalDate = new Date(bloco.fim);
+    const xValue = new Date(originalDate.getTime() + 3 * 60 * 60 * 1000); // +3 horas
+    this.chartData.labels?.push(xValue.toLocaleTimeString());
     (this.chartData.datasets[0].data as number[]).push(parseFloat(bloco.alta));
     (this.chartData.datasets[1].data as number[]).push(parseFloat(bloco.queda));
     (this.chartData.datasets[2].data as number[]).push(parseFloat(bloco.rastro_acumulado));
