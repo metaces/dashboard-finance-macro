@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://grade-treinamentos-chdsehd3ctetb2bm.brazilsouth-01.azurewebsites.net/v1',
+  apiUrl: 'http://node-server:3000',
+  wsUrl: 'ws://node-websocket:8080'
 };
